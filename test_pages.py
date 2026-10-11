@@ -1,6 +1,6 @@
 from streamlit.testing.v1 import AppTest
 import sys
-pages = ["ledger","highlow","patterns","coverage","graphs","models","tools"]
+pages = ["ledger","highlow","weekly","patterns","coverage","graphs","models","tools"]
 ok = True
 for p in pages:
     src = f"""

@@ -4,13 +4,14 @@ import streamlit as st
 st.set_page_config(page_title="Daily 3 Draw Ledger", page_icon="🎲", layout="wide")
 
 from lib import ui  # noqa: E402
-from views import coverage, graphs, highlow, ledger, models, patterns, tools  # noqa: E402
+from views import coverage, graphs, highlow, ledger, models, patterns, tools, weekly  # noqa: E402
 
 ui.inject_css()
 
 pages = [
     st.Page(ledger.render, title="Ledger", icon="📒", default=True),
     st.Page(highlow.render, title="High-Low", icon="🔁", url_path="high-low"),
+    st.Page(weekly.render, title="Weekly Patterns", icon="🗓️", url_path="weekly"),
     st.Page(patterns.render, title="Patterns & Odds", icon="📊", url_path="patterns"),
     st.Page(coverage.render, title="Number Coverage", icon="🔢", url_path="coverage"),
     st.Page(graphs.render, title="Graphs", icon="📈", url_path="graphs"),

@@ -187,7 +187,7 @@ def history_charts(ev: pd.DataFrame):
         fig = go.Figure()
         fig.add_bar(x=cats, y=obs, name="Observed", marker_color=[ui.GOOD] * HL_WINDOW + [ui.BAD])
         fig.add_trace(go.Scatter(x=cats, y=exp, mode="markers", name="Chance predicts",
-                                 marker=dict(symbol="line-ew-open", size=30, line=dict(width=3, color="#bbb"))))
+                                 marker=dict(symbol="line-ew-open", size=30, color="#f2c14e", line=dict(width=3, color="#f2c14e"))))
         fig.update_xaxes(type="category", categoryorder="array", categoryarray=cats)
         ui.show(ui.style(fig, 280))
 
