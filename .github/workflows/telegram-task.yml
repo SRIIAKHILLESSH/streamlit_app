@@ -1,0 +1,68 @@
+name: Telegram task
+
+# Started by the Cloudflare Worker (bot/worker.js) when you message the Telegram bot.
+on:
+  repository_dispatch:
+    types: [telegram-task]
+
+permissions:
+  contents: write
+
+# One task at a time, in the order they arrive.
+concurrency:
+  group: telegram-task
+  cancel-in-progress: false
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    env:
+      # Message fields come in through env vars (never pasted into shell code).
+      TASK: ${{ github.event.client_payload.text }}
+      CHAT_ID: ${{ github.event.client_payload.chat_id }}
+      MESSAGE_ID: ${{ github.event.client_payload.message_id }}
+      ALLOWED_CHAT_ID: ${{ secrets.ALLOWED_CHAT_ID }}
+      TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+      CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+      APP_URL: ${{ vars.APP_URL }}
+      RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+    steps:
+      - name: Check sender
+        run: |
+          if [ -z "$ALLOWED_CHAT_ID" ] || [ "$CHAT_ID" != "$ALLOWED_CHAT_ID" ]; then
+            echo "Message is not from the allowed chat; ignoring."; exit 1
+          fi
+
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Install tools
+        run: |
+          pip install -r requirements.txt
+          npm install -g @anthropic-ai/claude-code
+
+      - name: Configure git
+        run: |
+          git config user.name "Claude (Telegram)"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Do the task
+        run: python bot/run_task.py
+
+      - name: Tell Telegram if the job itself failed
+        if: failure()
+        run: |
+          curl -s -X POST "https://api.telegram.org/bot${TELEGRAM_BOT_TOKEN}/sendMessage" \
+            --data-urlencode "chat_id=${CHAT_ID}" \
+            --data-urlencode "text=⚠️ The task job failed before finishing. Log: ${RUN_URL}" > /dev/null || true
