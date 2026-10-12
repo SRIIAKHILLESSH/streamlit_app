@@ -36,11 +36,13 @@ jobs:
         run: python -m automl.model1.predict
       - name: AutoML 2 - prospective log (after freeze)
         run: python -m automl.model2.prospective
+      - name: AutoML 3 - coverage ladder (weekly ranker pick + pre-register)
+        run: python -m automl.model3.ladder
       - name: Commit
         run: |
           git config user.name "AutoML bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/*.csv artifacts/automl1/live artifacts/automl2/live 2>/dev/null || true
+          git add data/*.csv artifacts/automl1/live artifacts/automl2/live artifacts/automl3 2>/dev/null || true
           git diff --cached --quiet && exit 0
           git commit -m "AutoML live: score + pre-register $(date -u +'%F %H:%M')"
           for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && exit 0; sleep $((i*10)); done

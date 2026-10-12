@@ -67,6 +67,13 @@ async function predict(env) {
   if (a2 && a2.predictions && a2.predictions.champion) {
     out.push("", "AutoML 2 · frozen blind model", `Top 20: ${a2.predictions.champion.top100.slice(0, 20).join(" ")}`);
   }
+  const a3 = await rawJson(env, "artifacts/automl3/live/latest.json");
+  const n3 = a3 && a3.next;
+  if (n3 && n3.picks) {
+    out.push("", `🪜 AutoML 3 ladder · week ${n3.week} · ${n3.k} numbers (${n3.ranker.replace(/_/g, " ")})`);
+    out.push(n3.k >= 500 ? `Left out (${n3.left_out.length}): ${n3.left_out.join(" ")}` : `List: ${n3.picks.join(" ")}`);
+    out.push(`Chance a draw lands in the list: ${n3.k / 10}%`);
+  }
   out.push("", "Every number has a 1-in-1,000 chance; Top 100 covers 10% by chance alone. Full lists are on the website.");
   return out.join("\n");
 }

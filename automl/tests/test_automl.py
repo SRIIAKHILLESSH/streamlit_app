@@ -120,3 +120,30 @@ def test_evaluator_runs_only_once(tmp_path):
     (tmp_path / "blind_evaluation_report.json").write_text("{}")
     with pytest.raises(SystemExit):
         evaluate_once.evaluate(tmp_path, "blind")
+
+
+# ------------------------------------------------------------------ AutoML 3 (coverage ladder)
+def test_ladder_schedule():
+    from automl.model3 import ladder as L
+    assert L.week_of("2026-10-12") == 0 and L.week_of("2026-10-13") == 1 and L.week_of("2026-10-19") == 1
+    assert L.week_of("2026-10-20") == 2
+    assert [L.k_for_week(w) for w in (1, 2, 8, 9, 10, 30)] == [900, 800, 200, 100, 100, 100]
+
+
+def test_ladder_rankers_are_full_permutations_and_use_only_the_past():
+    from automl.model3 import ladder as L
+    past = np.random.default_rng(1).integers(0, 1000, 3000)
+    for name in L.RANKERS:
+        o = L.ranking(name, past, "2026-10-13", "midday")
+        assert sorted(o.tolist()) == list(range(1000)), name
+        # changing anything after the cut-off cannot change the ranking: rankers only ever see `past`
+        assert (L.ranking(name, past.copy(), "2026-10-13", "midday") == o).all()
+
+
+@needs_data
+def test_ladder_backtest_hit_counts_are_sane():
+    from automl.model3 import ladder as L
+    s = c.load_stream()
+    bt = L.backtest(s, 500, n=200)
+    assert set(bt) == set(L.RANKERS)
+    assert all(40 <= v["hits"] <= 160 for v in bt.values())  # chance = 100 of 200

@@ -42,6 +42,14 @@ After the freeze, `prospective.py` pre-registers the frozen model's ranking for 
 
 *Isolation note:* the Daily 3 history is public, so isolation is enforced by process: the trainer machine never receives the files, tests forbid the trainer code from referencing them, and the evaluator is a one-time locked job. *Development note:* while building the evaluator, a 10-trial test build was scored on years 40–42 on a laptop, to check that the code works (8.8% Top-100, no edge). No design choice was changed after it. The official freeze and evaluation are the GitHub Actions run.
 
+## AutoML 3: coverage ladder (`automl/model3/ladder.py`)
+Before every draw, a list of K numbers is pre-registered (timestamp + SHA-256, append-only). K starts at 900 in week 1
+(Tue 2026-10-13 → Mon 2026-10-19) and drops by 100 each week to 100 (week 9 onward). At the first run of each week the
+AutoML back-tests 14 rankers (random, hot/cold windows, overdue, recently drawn, skip-recent, positional digit
+frequency) walk-forward on the last 730 draws at that week's K and freezes the best one for the week. Results are
+scored against the exact chance rate K/1,000 with Wilson intervals and one-sided binomial p-values. The back-test winner
+is the best of 14 on the same draws, so its back-test rate is optimistic; the live weekly rate is the honest number.
+
 ## Workflows (all in `.github/workflows/`)
 | Workflow | When | Does |
 |---|---|---|
