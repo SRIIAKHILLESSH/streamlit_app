@@ -111,7 +111,7 @@ def game_section(game: str, prime_share: str):
     flag_and_range_charts(win, cfg, prime_share)
 
     with st.expander(f"Full {game} table (download)"):
-        st.dataframe(df.iloc[::-1], use_container_width=True, height=320, hide_index=True)
+        st.dataframe(df.iloc[::-1], width="stretch", height=320, hide_index=True)
         st.download_button(f"Download {game} CSV", df.to_csv(index=False), file_name=cfg["csv"], mime="text/csv")
 
 

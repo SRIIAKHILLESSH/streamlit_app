@@ -5,12 +5,13 @@ Michigan Lottery Daily 3 / Daily 4 history and analysis. It's deployed on Stream
 ## Layout
 
 - `app.py` is the entry point and page list (`st.navigation`). Register new pages here.
-- `views/*.py` has one module per page, each exposing `render()`: ledger, highlow, weekly, patterns, coverage, graphs, models, tools.
+- `views/*.py` has one module per page, each exposing `render()`: ledger, highlow, weekly, patterns, coverage, graphs, models, tools, automl1, automl2.
 - `lib/data.py` loads `data/daily3.csv` and `data/daily4.csv` (`date,midday,evening`; numbers are zero-padded strings, and an empty value means no draw). It merges in the latest ~50 draws scraped from lotteryusa.com. `data.stream(df, mode)` gives draws in chronological order (midday then evening).
 - `lib/stats.py` holds the shared analysis: `high_low()`, `why_features()`, `wilson()`, `chi_p()`, `session_stats()`.
 - `lib/ui.py` holds the colors (MIDDAY, EVENING, GOOD, BAD…), `style(fig, height)` + `show(fig)` for Plotly, and `verdict()`.
 - `data/models.json` has the saved Model 1–3 results and 500-number pools.
 - `scripts/update_data.py` appends new draws to the CSVs. It runs nightly via `.github/workflows/update-data.yml`.
+- `automl/` holds two AutoML experiments (see `automl/README.md`): `model1` (self-improving XGBoost + Optuna, weekly) and `model2` (strict blind test, runs once). Results go in `artifacts/automl1` and `artifacts/automl2` and are shown on the AutoML pages. To start a new AutoML 1 run, edit `automl/model1/RUN_REQUEST` and push. **Never hand-edit `artifacts/automl2/`, never re-run its evaluator, and never tune anything on years 38–42 (AutoML 1 locked test) or 39–42 (AutoML 2).** Training-only packages are in `automl/requirements.txt`.
 - `bot/` is the Telegram bridge: `worker.js` runs on Cloudflare, and `run_task.py` runs each request in `.github/workflows/telegram-task.yml`.
 
 ## Working rules

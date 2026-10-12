@@ -59,7 +59,7 @@ def style(fig: go.Figure, height: int = 320, legend: bool = True) -> go.Figure:
 
 
 def show(fig: go.Figure):
-    st.plotly_chart(fig, use_container_width=True, config={"displaylogo": False})
+    st.plotly_chart(fig, width="stretch", config={"displaylogo": False})
 
 
 def tags(words):

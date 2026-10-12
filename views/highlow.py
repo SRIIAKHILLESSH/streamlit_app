@@ -213,7 +213,7 @@ def trigger_table(ev: pd.DataFrame):
     })
     colors = {"green": "background-color: rgba(46,157,91,.22)", "red": "background-color: rgba(209,69,61,.20)", "pending": ""}
     styled = show.style.apply(lambda row: [colors[row["_s"]]] * len(row), axis=1)
-    st.dataframe(styled, use_container_width=True, height=520, hide_index=True, column_config={"_s": None})
+    st.dataframe(styled, width="stretch", height=520, hide_index=True, column_config={"_s": None})
     st.caption("Numbers in [brackets] are 000–099 results.")
     st.download_button("Download table (CSV)", show.drop(columns="_s").to_csv(index=False), "high_low_triggers.csv", "text/csv")
 

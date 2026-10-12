@@ -1,0 +1,102 @@
+name: AutoML 2 - strict blind experiment (runs once)
+
+# Three isolated jobs on three separate machines:
+#   prepare  - has the full history; builds the trainer bundle (years 1-38 + a results-free schedule for 40-42)
+#   train    - checkout WITHOUT data/; sees only the bundle; Optuna search; freezes + commits signed predictions
+#   evaluate - fresh machine; verifies hashes and commit time, builds the answer key itself, scores once
+on:
+  workflow_dispatch:
+  push:
+    paths: ["automl/model2/RUN_REQUEST"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automl2
+  cancel-in-progress: false
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Refuse to re-run a finished experiment
+        run: |
+          if [ -f artifacts/automl2/manifest.json ]; then
+            echo "AutoML 2 is already frozen. Its blind test must not be repeated; start a new prospective period instead."
+            exit 1
+          fi
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r automl/requirements.txt
+      - run: python -m automl.model2.prepare build/trainer_bundle
+      - uses: actions/upload-artifact@v4
+        with:
+          name: trainer-bundle
+          path: build/trainer_bundle
+          retention-days: 7
+
+  train:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          sparse-checkout: |
+            automl
+            artifacts
+          sparse-checkout-cone-mode: true
+      - name: Confirm the full history is NOT on this machine
+        run: test ! -e data && echo "data/ absent - OK"
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r automl/requirements.txt
+      - uses: actions/download-artifact@v4
+        with:
+          name: trainer-bundle
+          path: bundle
+      - name: Integrity tests (trainer sandbox)
+        run: python -m pytest automl/tests -q
+      - name: Train, freeze and sign predictions
+        env:
+          AUTOML2_SANDBOX: "1"
+        run: python -m automl.model2.trainer.run bundle artifacts/automl2
+      - name: Commit frozen predictions
+        run: |
+          git config user.name "AutoML bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add --sparse artifacts/automl2
+          git commit -m "AutoML 2: freeze champion and blind predictions"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i*10)); done
+          exit 1
+
+  evaluate:
+    needs: train
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r automl/requirements.txt
+      - name: One-time blind evaluation (years 40-41) and confirmation (year 42)
+        run: python -m automl.model2.evaluator_private.evaluate_once artifacts/automl2 blind confirm
+      - name: Start the prospective log
+        run: python -m automl.model2.prospective
+      - name: Commit reports
+        run: |
+          git config user.name "AutoML bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add artifacts/automl2
+          git commit -m "AutoML 2: one-time blind evaluation report"
+          for i in 1 2 3 4 5; do git pull --rebase && git push && exit 0; sleep $((i*10)); done
+          exit 1

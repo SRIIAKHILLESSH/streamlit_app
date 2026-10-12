@@ -1,0 +1,11 @@
+# Training-only dependencies (GitHub Actions). The Streamlit site does not need these.
+pandas>=2.2
+numpy>=2.0
+scipy>=1.13
+requests>=2.32
+beautifulsoup4>=4.12
+xgboost>=2.1
+lightgbm>=4.5
+optuna>=4.0
+scikit-learn>=1.5
+pytest>=8.0

@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Daily 3 Draw Ledger", page_icon="🎲", layout="wide")
 
 from lib import ui  # noqa: E402
-from views import coverage, graphs, highlow, ledger, models, patterns, tools, weekly  # noqa: E402
+from views import automl1, automl2, coverage, graphs, highlow, ledger, models, patterns, tools, weekly  # noqa: E402
 
 ui.inject_css()
 
@@ -15,6 +15,8 @@ pages = [
     st.Page(patterns.render, title="Patterns & Odds", icon="📊", url_path="patterns"),
     st.Page(coverage.render, title="Number Coverage", icon="🔢", url_path="coverage"),
     st.Page(graphs.render, title="Graphs", icon="📈", url_path="graphs"),
+    st.Page(automl1.render, title="AutoML 1 · XGBoost", icon="🤖", url_path="automl-1"),
+    st.Page(automl2.render, title="AutoML 2 · Blind test", icon="🔒", url_path="automl-2"),
     st.Page(models.render, title="Models", icon="🧪", url_path="models"),
     st.Page(tools.render, title="Tools", icon="🧰", url_path="tools"),
 ]
@@ -22,7 +24,7 @@ pages = [
 with st.sidebar:
     st.markdown("### Daily 3 Draw Ledger")
     st.caption("Michigan Lottery Daily 3 & Daily 4 history, refreshed hourly from lotteryusa.com.")
-    if st.button("Check for new results now", use_container_width=True):
+    if st.button("Check for new results now", width="stretch"):
         st.cache_data.clear()
         st.rerun()
 

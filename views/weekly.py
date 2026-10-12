@@ -117,7 +117,7 @@ def render():
         rep_df = rep_df.sort_values("Week of (Mon)", ascending=False)
         st.caption(f"{len(rep_df)} case(s) · chance predicts about {exp_rep[min_rep]:.1f} weeks with a number "
                    f"{min_rep}+ times. No number has ever come up {int(maxnum.max()) + 1} times in one week.")
-        st.dataframe(rep_df, use_container_width=True, hide_index=True, height=min(420, 38 + 35 * len(rep_df)))
+        st.dataframe(rep_df, width="stretch", hide_index=True, height=min(420, 38 + 35 * len(rep_df)))
     else:
         st.caption("None found.")
 
@@ -182,7 +182,7 @@ def render():
     found = pd.DataFrame(rows)
     st.caption(f"{len(found):,} week(s) match.")
     if len(found):
-        st.dataframe(found, use_container_width=True, hide_index=True, height=min(380, 38 + 35 * len(found)))
+        st.dataframe(found, width="stretch", hide_index=True, height=min(380, 38 + 35 * len(found)))
         wk = st.selectbox("Show a week's draws", found["Week of (Mon)"].tolist(),
                           format_func=lambda w: f"{w} · {found.set_index('Week of (Mon)').loc[w, 'Draws in range']} in "
                                                 f"{found.set_index('Week of (Mon)').loc[w, 'Range']}")

@@ -56,9 +56,12 @@ On the **Variables** tab, add `APP_URL` = your Streamlit link (optional, used in
 2. Add that number as `ALLOWED_CHAT_ID` in **both** places: the Worker (Text variable) and GitHub (secret, step 4).
 3. Send `/start`. You should get the help message. Then send a real task.
 
+## Updating the Worker
+When `bot/worker.js` changes (for example when `/predict` and `/status` were added for the AutoML models), open the Worker in Cloudflare → **Edit code** → paste the new file → **Deploy**. Your variables stay as they are.
+
 ## Using it
 - Send any task in plain English. You get "⏳ Got it" right away and the result when the run finishes.
-- `/status` shows the last 5 runs.
+- `/predict` shows the pre-registered AutoML rankings for the next draw, `/status` shows both models' results against chance, and `/runs` shows the last 5 task runs.
 - Tasks run one at a time, in order. Each run is limited to about 25 minutes.
 - Usage counts toward your Claude subscription limits. GitHub's free tier includes 2,000 Actions minutes a month for private repos and unlimited for public ones.
 

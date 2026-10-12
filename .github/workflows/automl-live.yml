@@ -1,0 +1,43 @@
+name: AutoML live - score results and pre-register next draw
+
+# Twice a day, between draws: fetch new results, score earlier predictions, then save rankings for the next draw
+# BEFORE it happens. Midday draw 12:59 ET, evening 19:29 ET.
+on:
+  schedule:
+    - cron: "0 20 * * *"   # 4 pm EDT / 3 pm EST: midday result is in, evening draw still ahead
+    - cron: "0 5 * * *"    # 1 am EDT / midnight EST: evening result is in, next midday ahead
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automl-artifacts
+  cancel-in-progress: false
+
+jobs:
+  live:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r automl/requirements.txt
+      - name: Fetch new results
+        run: python scripts/update_data.py
+      - name: AutoML 1 - score + pre-register
+        run: python -m automl.model1.predict
+      - name: AutoML 2 - prospective log (after freeze)
+        run: python -m automl.model2.prospective
+      - name: Commit
+        run: |
+          git config user.name "AutoML bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add data/*.csv artifacts/automl1/live artifacts/automl2/live 2>/dev/null || true
+          git diff --cached --quiet && exit 0
+          git commit -m "AutoML live: score + pre-register $(date -u +'%F %H:%M')"
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && exit 0; sleep $((i*10)); done
+          exit 1

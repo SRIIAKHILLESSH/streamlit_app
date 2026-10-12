@@ -1,0 +1,54 @@
+name: AutoML 1 - optimize (XGBoost + Optuna)
+
+# Weekly self-improvement run: continues the Optuna study (until its patience / lifetime cap stops it),
+# re-checks champion vs challenger, re-reports the locked test, then pre-registers the next prediction.
+on:
+  schedule:
+    - cron: "0 6 * * 0"          # Sundays 06:00 UTC
+  workflow_dispatch:
+    inputs:
+      trials:
+        description: "Max trials this run"
+        default: "100"
+      minutes:
+        description: "Time budget (minutes)"
+        default: "150"
+  push:
+    paths: ["automl/model1/RUN_REQUEST"]   # edit this file to start a run (e.g. from Telegram)
+
+permissions:
+  contents: write
+
+concurrency:
+  group: automl-artifacts
+  cancel-in-progress: false
+
+jobs:
+  optimize:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - run: pip install -r automl/requirements.txt
+      - name: Integrity tests
+        run: python -m pytest automl/tests -q
+      - name: Optimize
+        env:
+          AUTOML1_TRIALS: ${{ inputs.trials || '100' }}
+          AUTOML1_MINUTES: ${{ inputs.minutes || '150' }}
+        run: python -m automl.model1.optimize
+      - name: Pre-register next prediction
+        run: python -m automl.model1.predict
+      - name: Commit results
+        run: |
+          git config user.name "AutoML bot"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add artifacts/automl1
+          git diff --cached --quiet && exit 0
+          git commit -m "AutoML 1: optimization run $(date -u +%F)"
+          for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && exit 0; sleep $((i*10)); done
+          exit 1
