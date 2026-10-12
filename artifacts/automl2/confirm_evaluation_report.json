@@ -1,0 +1,167 @@
+{
+  "period": "confirm",
+  "years": [
+    42
+  ],
+  "evaluated_utc": "2026-10-12T20:24:54+00:00",
+  "predictions_committed_utc": "2026-10-12T20:24:13Z",
+  "frozen_utc": "2026-10-12T20:24:12+00:00",
+  "draws_scored": 730,
+  "draws_without_prediction": 0,
+  "champion": {
+    "family": "freq_exact",
+    "top100": {
+      "hits": 81,
+      "n": 730,
+      "rate": 0.11095890410958904,
+      "ci95": [
+        0.09017978944042714,
+        0.13581121461276366
+      ],
+      "baseline": 0.1,
+      "p_value_vs_baseline_one_sided": 0.17672082890839924
+    },
+    "top50": {
+      "hits": 43,
+      "n": 730,
+      "rate": 0.0589041095890411,
+      "ci95": [
+        0.04402232528405426,
+        0.07840409480442262
+      ],
+      "baseline": 0.05,
+      "p_value_vs_baseline_one_sided": 0.1541057766654117
+    },
+    "top20": {
+      "hits": 17,
+      "n": 730,
+      "rate": 0.023287671232876714,
+      "ci95": [
+        0.014589569894785534,
+        0.036976871691518656
+      ],
+      "baseline": 0.02,
+      "p_value_vs_baseline_one_sided": 0.2967190865049401
+    },
+    "top10": {
+      "hits": 10,
+      "n": 730,
+      "rate": 0.0136986301369863,
+      "ci95": [
+        0.0074574737020030625,
+        0.0250312813644854
+      ],
+      "baseline": 0.01,
+      "p_value_vs_baseline_one_sided": 0.2002410062588813
+    },
+    "log_loss": 6.907077885049975,
+    "uniform_log_loss": 6.907755278982137,
+    "log_loss_gain_vs_uniform": 0.0006773939321620404
+  },
+  "baseline_seeded_random": {
+    "top100": {
+      "hits": 73,
+      "n": 730,
+      "rate": 0.1,
+      "ci95": [
+        0.08028737971265656,
+        0.1239005540321734
+      ],
+      "baseline": 0.1,
+      "p_value_vs_baseline_one_sided": 0.5180444343689607
+    },
+    "top50": {
+      "hits": 34,
+      "n": 730,
+      "rate": 0.04657534246575343,
+      "ci95": [
+        0.03351861293586846,
+        0.06437935305570247
+      ],
+      "baseline": 0.05,
+      "p_value_vs_baseline_one_sided": 0.6880546139346777
+    },
+    "top20": {
+      "hits": 16,
+      "n": 730,
+      "rate": 0.021917808219178082,
+      "ci95": [
+        0.013535368445624736,
+        0.035305689352134344
+      ],
+      "baseline": 0.02,
+      "p_value_vs_baseline_one_sided": 0.39059248994645934
+    },
+    "top10": {
+      "hits": 8,
+      "n": 730,
+      "rate": 0.010958904109589041,
+      "ci95": [
+        0.005563221408386516,
+        0.021474766081011742
+      ],
+      "baseline": 0.01,
+      "p_value_vs_baseline_one_sided": 0.4461159699073825
+    }
+  },
+  "baseline_frequency_years_1_38": {
+    "top100": {
+      "hits": 81,
+      "n": 730,
+      "rate": 0.11095890410958904,
+      "ci95": [
+        0.09017978944042714,
+        0.13581121461276366
+      ],
+      "baseline": 0.1,
+      "p_value_vs_baseline_one_sided": 0.17672082890839924
+    },
+    "top50": {
+      "hits": 43,
+      "n": 730,
+      "rate": 0.0589041095890411,
+      "ci95": [
+        0.04402232528405426,
+        0.07840409480442262
+      ],
+      "baseline": 0.05,
+      "p_value_vs_baseline_one_sided": 0.1541057766654117
+    },
+    "top20": {
+      "hits": 17,
+      "n": 730,
+      "rate": 0.023287671232876714,
+      "ci95": [
+        0.014589569894785534,
+        0.036976871691518656
+      ],
+      "baseline": 0.02,
+      "p_value_vs_baseline_one_sided": 0.2967190865049401
+    },
+    "top10": {
+      "hits": 10,
+      "n": 730,
+      "rate": 0.0136986301369863,
+      "ci95": [
+        0.0074574737020030625,
+        0.0250312813644854
+      ],
+      "baseline": 0.01,
+      "p_value_vs_baseline_one_sided": 0.2002410062588813
+    }
+  },
+  "champion_by_year": {
+    "42": {
+      "hits": 81,
+      "n": 730,
+      "rate": 0.11095890410958904,
+      "ci95": [
+        0.09017978944042714,
+        0.13581121461276366
+      ],
+      "baseline": 0.1,
+      "p_value_vs_baseline_one_sided": 0.17672082890839924
+    }
+  },
+  "conclusion": "Top-100 hit rate 11.1% (95% CI 9.0%-13.6%) vs the 10% fair-draw baseline; one-sided p = 0.177. No established edge over chance on blind data."
+}
