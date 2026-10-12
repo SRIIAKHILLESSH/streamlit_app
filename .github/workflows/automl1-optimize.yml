@@ -41,13 +41,15 @@ jobs:
           AUTOML1_TRIALS: ${{ inputs.trials || '100' }}
           AUTOML1_MINUTES: ${{ inputs.minutes || '150' }}
         run: python -m automl.model1.optimize
-      - name: Pre-register next prediction
-        run: python -m automl.model1.predict
+      - name: Pre-register next prediction (with the newest results)
+        run: |
+          python scripts/update_data.py
+          python -m automl.model1.predict
       - name: Commit results
         run: |
           git config user.name "AutoML bot"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add artifacts/automl1
+          git add artifacts/automl1 data/*.csv
           git diff --cached --quiet && exit 0
           git commit -m "AutoML 1: optimization run $(date -u +%F)"
           for i in 1 2 3 4 5; do git pull --rebase -X theirs && git push && exit 0; sleep $((i*10)); done

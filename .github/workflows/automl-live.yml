@@ -6,7 +6,11 @@ on:
   schedule:
     - cron: "0 20 * * *"   # 4 pm EDT / 3 pm EST: midday result is in, evening draw still ahead
     - cron: "0 5 * * *"    # 1 am EDT / midnight EST: evening result is in, next midday ahead
+    - cron: "0 14 * * *"   # safety re-run before midday (repeats are no-ops: one prediction per draw)
+    - cron: "30 21 * * *"  # safety re-run before evening
   workflow_dispatch:
+  push:
+    paths: ["automl/LIVE_REQUEST"]   # edit to run now
 
 permissions:
   contents: write
