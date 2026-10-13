@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-13T12:26:07+00:00",
+  "updated_utc": "2026-10-13T20:07:17+00:00",
   "start": "2026-10-13",
   "schedule": [
     {
@@ -78,13 +78,13 @@
   "current_week": 1,
   "next": {
     "date": "2026-10-13",
-    "draw_type": "midday",
+    "draw_type": "evening",
     "week": 1,
     "k": 900,
     "ranker": "recently_drawn_first",
-    "created_utc": "2026-10-13T02:39:52+00:00",
+    "created_utc": "2026-10-13T20:07:17+00:00",
     "made_before_draw": "True",
-    "ranking_sha256": "8eb9c1d8768c4ba20968f033db656c77f92f34e748f99dae2c8b541278f4f1b1",
+    "ranking_sha256": "359e1e4c6c078f2f53e3b152473bd0799476397b79f4ea40f1d4dcec9933fc0c",
     "picks": [
       "000",
       "002",
@@ -129,6 +129,7 @@
       "049",
       "050",
       "052",
+      "053",
       "054",
       "055",
       "056",
@@ -419,7 +420,6 @@
       "360",
       "361",
       "362",
-      "363",
       "364",
       "365",
       "366",
@@ -998,7 +998,6 @@
       "040",
       "045",
       "051",
-      "053",
       "066",
       "068",
       "081",
@@ -1018,6 +1017,7 @@
       "314",
       "341",
       "358",
+      "363",
       "367",
       "370",
       "385",
@@ -1175,11 +1175,26 @@
       "note": "best of 14 rankers on the same draws, so its back-test rate is optimistic"
     }
   },
-  "scorecard": [],
+  "scorecard": [
+    {
+      "week": 1,
+      "k": 900,
+      "draws": 1,
+      "hits": 0,
+      "rate": 0.0,
+      "ci95": [
+        0.0,
+        0.7934567085261071
+      ],
+      "chance": 0.9,
+      "expected_hits": 0.9,
+      "p_better_than_chance": 1.0
+    }
+  ],
   "overall": {
-    "draws": 0,
+    "draws": 1,
     "hits": 0,
-    "expected_hits": 0,
-    "z_vs_chance": null
+    "expected_hits": 0.9,
+    "z_vs_chance": -3.0
   }
 }
