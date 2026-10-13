@@ -1,0 +1,2 @@
+draw_date,draw_type,week,k,ranker,created_utc,draw_time_utc,made_before_draw,ranking_sha256,result,result_rank,hit,scored_utc
+2026-10-13,midday,1,900,recently_drawn_first,2026-10-13T02:39:52+00:00,2026-10-13T16:59:00+00:00,True,8eb9c1d8768c4ba20968f033db656c77f92f34e748f99dae2c8b541278f4f1b1,,,,

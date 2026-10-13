@@ -1,0 +1,85 @@
+{
+  "1": {
+    "week": 1,
+    "start": "2026-10-13",
+    "end": "2026-10-19",
+    "k": 900,
+    "ranker": "recently_drawn_first",
+    "selected_utc": "2026-10-13T02:39:52+00:00",
+    "selected_from": "730 draws ending 2026-10-12 evening",
+    "chance_rate": 0.9,
+    "backtest": {
+      "random": {
+        "hits": 661,
+        "n": 730,
+        "rate": 0.9054794520547945
+      },
+      "hot_30": {
+        "hits": 654,
+        "n": 730,
+        "rate": 0.8958904109589041
+      },
+      "hot_100": {
+        "hits": 653,
+        "n": 730,
+        "rate": 0.8945205479452055
+      },
+      "hot_365": {
+        "hits": 653,
+        "n": 730,
+        "rate": 0.8945205479452055
+      },
+      "hot_1000": {
+        "hits": 659,
+        "n": 730,
+        "rate": 0.9027397260273973
+      },
+      "cold_365": {
+        "hits": 656,
+        "n": 730,
+        "rate": 0.8986301369863013
+      },
+      "cold_1000": {
+        "hits": 643,
+        "n": 730,
+        "rate": 0.8808219178082192
+      },
+      "overdue": {
+        "hits": 649,
+        "n": 730,
+        "rate": 0.8890410958904109
+      },
+      "recently_drawn_first": {
+        "hits": 665,
+        "n": 730,
+        "rate": 0.910958904109589
+      },
+      "skip_last_7": {
+        "hits": 660,
+        "n": 730,
+        "rate": 0.9041095890410958
+      },
+      "skip_last_30": {
+        "hits": 655,
+        "n": 730,
+        "rate": 0.8972602739726028
+      },
+      "digits_hot_100": {
+        "hits": 659,
+        "n": 730,
+        "rate": 0.9027397260273973
+      },
+      "digits_hot_500": {
+        "hits": 653,
+        "n": 730,
+        "rate": 0.8945205479452055
+      },
+      "digits_cold_500": {
+        "hits": 659,
+        "n": 730,
+        "rate": 0.9027397260273973
+      }
+    },
+    "note": "best of 14 rankers on the same draws, so its back-test rate is optimistic"
+  }
+}
