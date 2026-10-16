@@ -50,6 +50,12 @@ frequency) walk-forward on the last 730 draws at that week's K and freezes the b
 scored against the exact chance rate K/1,000 with Wilson intervals and one-sided binomial p-values. The back-test winner
 is the best of 14 on the same draws, so its back-test rate is optimistic; the live weekly rate is the honest number.
 
+## AutoML 4: 2025 blind reconstruction (`automl/model4`)
+Owner's benchmark: reconstruct randomly hidden (50%) 2025 midday/evening numbers, exact match, target >= 80%. `run.py` (trainer; sees only
+draws <= 2024-12-31 plus the date/session of hidden cases) logs random-search experiments on 2024 validation, freezes one prediction per case with
+SHA-256 hashes; `evaluator_private/evaluate_once.py` scores once (refuses re-run), publishes only aggregates, unlocks answers only at >= 80%.
+Run once: 0/364 correct (chance predicts 0.36). Do not re-run the evaluator or tune on 2025.
+
 ## Workflows (all in `.github/workflows/`)
 | Workflow | When | Does |
 |---|---|---|

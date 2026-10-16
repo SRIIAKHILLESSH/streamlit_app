@@ -1,0 +1,17 @@
+{
+ "frozen_utc": "2026-10-16T07:27:12+00:00",
+ "champion": {
+  "kind": "random",
+  "seed": 682495
+ },
+ "champion_val_accuracy": 0.00546448087431694,
+ "validation_n": 366,
+ "trials": 60,
+ "train_rows": 23686,
+ "train_end": "2024-12-31",
+ "blind_cases": 364,
+ "predictions_sha256": "9baab5803ad5c9cdcb8c6a873549ade98c1872a58c240663a3c9c7567fea58fa",
+ "trials_sha256": "b35b08f2da8b895ddd1ea3531c93da6b97f7090d536150953b98a9234bf561ed",
+ "code_sha256": "557af285b36de0e56b694716208ce7bc34413ab6046b7fae208145126b13c938",
+ "val_best_accuracy_note": "best of all trials on the same 2024 validation cases, so optimistic"
+}

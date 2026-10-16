@@ -1,0 +1,676 @@
+[
+ {
+  "trial": 0,
+  "config": {
+   "kind": "random",
+   "seed": 773956
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 1,
+  "config": {
+   "kind": "weekday",
+   "half_life": 365.0,
+   "by_session": false,
+   "off_weight": 0.7
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 2,
+  "config": {
+   "kind": "random",
+   "seed": 697368
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 3,
+  "config": {
+   "kind": "random",
+   "seed": 94177
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 4,
+  "config": {
+   "kind": "weekday",
+   "half_life": 3650.0,
+   "by_session": true,
+   "off_weight": 0.7
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 5,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": true,
+   "off_weight": 0.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 6,
+  "config": {
+   "kind": "positional",
+   "half_life": 365.0,
+   "by_session": true,
+   "alpha": 5.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 7,
+  "config": {
+   "kind": "random",
+   "seed": 926764
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 8,
+  "config": {
+   "kind": "positional",
+   "half_life": 1095.0,
+   "by_session": false,
+   "alpha": 50.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 9,
+  "config": {
+   "kind": "weekday",
+   "half_life": 365.0,
+   "by_session": false,
+   "off_weight": 0.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 10,
+  "config": {
+   "kind": "random",
+   "seed": 554584
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 11,
+  "config": {
+   "kind": "positional",
+   "half_life": 0.0,
+   "by_session": true,
+   "alpha": 50.0
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 12,
+  "config": {
+   "kind": "freq",
+   "half_life": 1095.0,
+   "by_session": false
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 13,
+  "config": {
+   "kind": "positional",
+   "half_life": 1095.0,
+   "by_session": false,
+   "alpha": 0.5
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 14,
+  "config": {
+   "kind": "positional",
+   "half_life": 365.0,
+   "by_session": true,
+   "alpha": 50.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 15,
+  "config": {
+   "kind": "positional",
+   "half_life": 1095.0,
+   "by_session": false,
+   "alpha": 5.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 16,
+  "config": {
+   "kind": "freq",
+   "half_life": 365.0,
+   "by_session": false
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 17,
+  "config": {
+   "kind": "weekday",
+   "half_life": 0.0,
+   "by_session": true,
+   "off_weight": 0.7
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 18,
+  "config": {
+   "kind": "positional",
+   "half_life": 1095.0,
+   "by_session": false,
+   "alpha": 50.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 19,
+  "config": {
+   "kind": "freq",
+   "half_life": 90.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 20,
+  "config": {
+   "kind": "freq",
+   "half_life": 0.0,
+   "by_session": false
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 21,
+  "config": {
+   "kind": "positional",
+   "half_life": 0.0,
+   "by_session": false,
+   "alpha": 0.5
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 22,
+  "config": {
+   "kind": "weekday",
+   "half_life": 365.0,
+   "by_session": false,
+   "off_weight": 0.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 23,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": true,
+   "off_weight": 0.3
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 24,
+  "config": {
+   "kind": "random",
+   "seed": 832678
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 25,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": false,
+   "off_weight": 0.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 26,
+  "config": {
+   "kind": "positional",
+   "half_life": 3650.0,
+   "by_session": false,
+   "alpha": 50.0
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 27,
+  "config": {
+   "kind": "positional",
+   "half_life": 90.0,
+   "by_session": true,
+   "alpha": 0.5
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 28,
+  "config": {
+   "kind": "random",
+   "seed": 682495
+  },
+  "val_hits": 2,
+  "val_n": 366,
+  "val_accuracy": 0.00546448087431694
+ },
+ {
+  "trial": 29,
+  "config": {
+   "kind": "weekday",
+   "half_life": 0.0,
+   "by_session": true,
+   "off_weight": 0.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 30,
+  "config": {
+   "kind": "positional",
+   "half_life": 0.0,
+   "by_session": true,
+   "alpha": 50.0
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 31,
+  "config": {
+   "kind": "positional",
+   "half_life": 1095.0,
+   "by_session": false,
+   "alpha": 50.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 32,
+  "config": {
+   "kind": "freq",
+   "half_life": 1095.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 33,
+  "config": {
+   "kind": "freq",
+   "half_life": 365.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 34,
+  "config": {
+   "kind": "random",
+   "seed": 139796
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 35,
+  "config": {
+   "kind": "random",
+   "seed": 114530
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 36,
+  "config": {
+   "kind": "freq",
+   "half_life": 1095.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 37,
+  "config": {
+   "kind": "freq",
+   "half_life": 3650.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 38,
+  "config": {
+   "kind": "random",
+   "seed": 764998
+  },
+  "val_hits": 2,
+  "val_n": 366,
+  "val_accuracy": 0.00546448087431694
+ },
+ {
+  "trial": 39,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": true,
+   "off_weight": 0.3
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 40,
+  "config": {
+   "kind": "random",
+   "seed": 559207
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 41,
+  "config": {
+   "kind": "positional",
+   "half_life": 90.0,
+   "by_session": true,
+   "alpha": 0.5
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 42,
+  "config": {
+   "kind": "freq",
+   "half_life": 365.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 43,
+  "config": {
+   "kind": "random",
+   "seed": 276548
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 44,
+  "config": {
+   "kind": "freq",
+   "half_life": 3650.0,
+   "by_session": true
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 45,
+  "config": {
+   "kind": "random",
+   "seed": 233939
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 46,
+  "config": {
+   "kind": "positional",
+   "half_life": 0.0,
+   "by_session": true,
+   "alpha": 0.5
+  },
+  "val_hits": 1,
+  "val_n": 366,
+  "val_accuracy": 0.00273224043715847
+ },
+ {
+  "trial": 47,
+  "config": {
+   "kind": "positional",
+   "half_life": 90.0,
+   "by_session": false,
+   "alpha": 5.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 48,
+  "config": {
+   "kind": "random",
+   "seed": 557032
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 49,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": true,
+   "off_weight": 0.3
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 50,
+  "config": {
+   "kind": "freq",
+   "half_life": 365.0,
+   "by_session": false
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 51,
+  "config": {
+   "kind": "positional",
+   "half_life": 90.0,
+   "by_session": false,
+   "alpha": 5.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 52,
+  "config": {
+   "kind": "random",
+   "seed": 106142
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 53,
+  "config": {
+   "kind": "random",
+   "seed": 771552
+  },
+  "val_hits": 2,
+  "val_n": 366,
+  "val_accuracy": 0.00546448087431694
+ },
+ {
+  "trial": 54,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": false,
+   "off_weight": 0.7
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 55,
+  "config": {
+   "kind": "random",
+   "seed": 900621
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 56,
+  "config": {
+   "kind": "weekday",
+   "half_life": 3650.0,
+   "by_session": false,
+   "off_weight": 0.3
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 57,
+  "config": {
+   "kind": "weekday",
+   "half_life": 365.0,
+   "by_session": false,
+   "off_weight": 0.0
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 58,
+  "config": {
+   "kind": "freq",
+   "half_life": 90.0,
+   "by_session": false
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ },
+ {
+  "trial": 59,
+  "config": {
+   "kind": "weekday",
+   "half_life": 1095.0,
+   "by_session": true,
+   "off_weight": 0.3
+  },
+  "val_hits": 0,
+  "val_n": 366,
+  "val_accuracy": 0.0
+ }
+]

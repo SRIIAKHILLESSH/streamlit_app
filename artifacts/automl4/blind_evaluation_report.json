@@ -1,0 +1,25 @@
+{
+ "evaluated_utc": "2026-10-16T07:27:16+00:00",
+ "cases": 364,
+ "correct": 0,
+ "accuracy": 0.0,
+ "ci95": [
+  0.0,
+  0.010443625734555309
+ ],
+ "chance": 0.001,
+ "target": 0.8,
+ "p_value_vs_chance": 1.0,
+ "target_met": false,
+ "answers_unlocked": false,
+ "per_session": {
+  "midday": {
+   "cases": 182,
+   "correct": 0
+  },
+  "evening": {
+   "cases": 182,
+   "correct": 0
+  }
+ }
+}
