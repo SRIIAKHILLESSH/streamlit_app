@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-10-17T23:16:56+00:00",
+  "updated_utc": "2026-10-18T09:18:17+00:00",
   "start": "2026-10-13",
   "schedule": [
     {
@@ -77,14 +77,14 @@
   ],
   "current_week": 1,
   "next": {
-    "date": "2026-10-17",
-    "draw_type": "evening",
+    "date": "2026-10-18",
+    "draw_type": "midday",
     "week": 1,
     "k": 900,
     "ranker": "recently_drawn_first",
-    "created_utc": "2026-10-17T21:52:55+00:00",
+    "created_utc": "2026-10-18T09:18:17+00:00",
     "made_before_draw": "True",
-    "ranking_sha256": "6bd210e038ac988c3d325df9b3fc43f83bc135858897a71da4deb18fc5be9f73",
+    "ranking_sha256": "7a09f231f5cb1c85802a1ea8b2f8f758071ed2814fb33e5f9217bae65d569c4a",
     "picks": [
       "000",
       "002",
@@ -1179,22 +1179,22 @@
     {
       "week": 1,
       "k": 900,
-      "draws": 9,
-      "hits": 8,
-      "rate": 0.8888888888888888,
+      "draws": 10,
+      "hits": 9,
+      "rate": 0.9,
       "ci95": [
-        0.5649937852319399,
-        0.9801096286728695
+        0.5958436145024278,
+        0.9821242504842788
       ],
       "chance": 0.9,
-      "expected_hits": 8.1,
-      "p_better_than_chance": 0.7748409780000002
+      "expected_hits": 9.0,
+      "p_better_than_chance": 0.7360989291000001
     }
   ],
   "overall": {
-    "draws": 9,
-    "hits": 8,
-    "expected_hits": 8.1,
-    "z_vs_chance": -0.11111111111111073
+    "draws": 10,
+    "hits": 9,
+    "expected_hits": 9.0,
+    "z_vs_chance": 0.0
   }
 }
