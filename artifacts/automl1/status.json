@@ -1,7 +1,7 @@
 {
-  "updated_utc": "2026-10-12T20:35:53+00:00",
+  "updated_utc": "2026-10-18T10:31:27+00:00",
   "study": "daily3_xgboost",
-  "data_cutoff": "2026-10-11",
+  "data_cutoff": "2026-10-17",
   "trials_total": 53,
   "trials_complete": 29,
   "trials_pruned": 24,
@@ -59,6 +59,13 @@
       "trials_this_run": 53,
       "best_value_after": 6.908779621124268,
       "promoted": false
+    },
+    {
+      "started": "2026-10-18T10:29:46+00:00",
+      "finished": "2026-10-18T10:31:27+00:00",
+      "trials_this_run": 0,
+      "best_value_after": 6.908779621124268,
+      "promoted": false
     }
   ],
   "protocol": {
@@ -81,12 +88,12 @@
     "objective": "mean exact-number log loss (uniform 6.9078)"
   },
   "audit": {
-    "draws": 24984,
+    "draws": 24996,
     "first_date": "1984-09-01",
-    "last_date": "2026-10-11",
+    "last_date": "2026-10-17",
     "duplicates_date_drawtype": 0,
     "invalid_numbers": 0,
-    "leading_zero_numbers": 2532,
+    "leading_zero_numbers": 2535,
     "first_draw_by_type": {
       "midday": "1996-12-16",
       "evening": "1984-09-01"
@@ -136,7 +143,7 @@
       "40": 732,
       "41": 730,
       "42": 730,
-      "43": 82
+      "43": 94
     },
     "year_definition": "dataset-year k = [1984-09-01 + (k-1) years, 1984-09-01 + k years); years 1-42 = 1984-09-01..2026-08-31; midday precedes evening on the same date",
     "rule_change_notes": [
