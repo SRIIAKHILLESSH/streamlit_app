@@ -81,5 +81,88 @@
       }
     },
     "note": "best of 14 rankers on the same draws, so its back-test rate is optimistic"
+  },
+  "2": {
+    "week": 2,
+    "start": "2026-10-20",
+    "end": "2026-10-26",
+    "k": 800,
+    "ranker": "hot_30",
+    "selected_utc": "2026-10-20T00:29:48+00:00",
+    "selected_from": "730 draws ending 2026-10-19 evening",
+    "chance_rate": 0.8,
+    "backtest": {
+      "random": {
+        "hits": 590,
+        "n": 730,
+        "rate": 0.8082191780821918
+      },
+      "hot_30": {
+        "hits": 592,
+        "n": 730,
+        "rate": 0.810958904109589
+      },
+      "hot_100": {
+        "hits": 588,
+        "n": 730,
+        "rate": 0.8054794520547945
+      },
+      "hot_365": {
+        "hits": 587,
+        "n": 730,
+        "rate": 0.8041095890410959
+      },
+      "hot_1000": {
+        "hits": 582,
+        "n": 730,
+        "rate": 0.7972602739726027
+      },
+      "cold_365": {
+        "hits": 565,
+        "n": 730,
+        "rate": 0.773972602739726
+      },
+      "cold_1000": {
+        "hits": 570,
+        "n": 730,
+        "rate": 0.7808219178082192
+      },
+      "overdue": {
+        "hits": 568,
+        "n": 730,
+        "rate": 0.7780821917808219
+      },
+      "recently_drawn_first": {
+        "hits": 589,
+        "n": 730,
+        "rate": 0.8068493150684931
+      },
+      "skip_last_7": {
+        "hits": 588,
+        "n": 730,
+        "rate": 0.8054794520547945
+      },
+      "skip_last_30": {
+        "hits": 581,
+        "n": 730,
+        "rate": 0.7958904109589041
+      },
+      "digits_hot_100": {
+        "hits": 591,
+        "n": 730,
+        "rate": 0.8095890410958904
+      },
+      "digits_hot_500": {
+        "hits": 574,
+        "n": 730,
+        "rate": 0.7863013698630137
+      },
+      "digits_cold_500": {
+        "hits": 591,
+        "n": 730,
+        "rate": 0.8095890410958904
+      }
+    },
+    "note": "best of 14 rankers on the same draws, so its back-test rate is optimistic"
   }
 }
