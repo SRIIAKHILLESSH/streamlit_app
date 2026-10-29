@@ -38,6 +38,9 @@ def render():
         "same length. The p-value is how often pure chance gives a result at least this extreme — "
         "a small p would mean 'not random-looking'.")
 
+    st.info("The random year was chosen from many computer-random candidates (then lightly adjusted) so its p-values match the "
+            "real 2026 p-values at 602 draws. That is matching on purpose, so its closeness proves nothing, and as 2026 adds draws "
+            "the p-values drift apart again.")
     rows = []
     for k, name in ry.METRICS.items():
         rows.append({"Test": name, "2026 real draws": fmt(k, A["rm"][k]),
