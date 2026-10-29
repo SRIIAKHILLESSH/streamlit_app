@@ -4,7 +4,7 @@ import streamlit as st
 st.set_page_config(page_title="Daily 3 Draw Ledger", page_icon="🎲", layout="wide")
 
 from lib import ui  # noqa: E402
-from views import automl1, automl2, automl3, automl4, clusters, coverage, randomyear, graphs, highlow, ledger, models, patterns, tools, weekly  # noqa: E402
+from views import automl1, automl2, automl3, automl4, clusters, coverage, randomyear, randomfull, graphs, highlow, ledger, models, patterns, tools, weekly  # noqa: E402
 
 ui.inject_css()
 
@@ -21,6 +21,7 @@ pages = [
     st.Page(automl3.render, title="AutoML 3 · Coverage ladder", icon="🪜", url_path="automl-3"),
     st.Page(automl4.render, title="AutoML 4 · 2025 blind", icon="🎯", url_path="automl-4"),
     st.Page(randomyear.render, title="One Year Random", icon="🎰", url_path="one-year-random"),
+    st.Page(randomfull.render, title="Random Twin · Full", icon="👯", url_path="random-twin"),
     st.Page(models.render, title="Models", icon="🧪", url_path="models"),
     st.Page(tools.render, title="Tools", icon="🧰", url_path="tools"),
 ]
