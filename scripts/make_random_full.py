@@ -60,7 +60,8 @@ def main():
     target = {k: cdf(rm[k], null[k]) for k in KEYS}
 
     def loss(m):
-        return max(abs(cdf(m[k], null[k]) - target[k]) for k in KEYS)
+        g = [abs(cdf(m[k], null[k]) - target[k]) for k in KEYS]
+        return max(g) + 0.01 * sum(g) / len(g)
 
     best, bl = None, 9
     for _ in range(300):
@@ -69,8 +70,8 @@ def main():
         if l < bl:
             best, bl = x, l
     x, cur = best.copy(), bl
-    for it in range(60000):
-        if cur < 0.005:
+    for it in range(400000):
+        if cur < 0.004:
             break
         i = rng.integers(N)
         old = x[i]
