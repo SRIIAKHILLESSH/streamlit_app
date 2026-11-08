@@ -1,5 +1,5 @@
 {
-  "updated_utc": "2026-11-01T12:47:02+00:00",
+  "updated_utc": "2026-11-08T12:52:36+00:00",
   "validation": {
     "best_candidate": {
       "n": 3652,
@@ -1057,7 +1057,7 @@
         }
       }
     },
-    "seconds": 34.4,
+    "seconds": 34.6,
     "config": {
       "max_depth": 3,
       "learning_rate": 0.1,
