@@ -496,5 +496,88 @@
       }
     },
     "note": "best of 14 rankers on the same draws, so its back-test rate is optimistic"
+  },
+  "7": {
+    "week": 7,
+    "start": "2026-11-24",
+    "end": "2026-11-30",
+    "k": 300,
+    "ranker": "recently_drawn_first",
+    "selected_utc": "2026-11-24T01:30:33+00:00",
+    "selected_from": "730 draws ending 2026-11-23 evening",
+    "chance_rate": 0.3,
+    "backtest": {
+      "random": {
+        "hits": 212,
+        "n": 730,
+        "rate": 0.29041095890410956
+      },
+      "hot_30": {
+        "hits": 216,
+        "n": 730,
+        "rate": 0.2958904109589041
+      },
+      "hot_100": {
+        "hits": 207,
+        "n": 730,
+        "rate": 0.28356164383561644
+      },
+      "hot_365": {
+        "hits": 243,
+        "n": 730,
+        "rate": 0.33287671232876714
+      },
+      "hot_1000": {
+        "hits": 234,
+        "n": 730,
+        "rate": 0.32054794520547947
+      },
+      "cold_365": {
+        "hits": 201,
+        "n": 730,
+        "rate": 0.27534246575342464
+      },
+      "cold_1000": {
+        "hits": 224,
+        "n": 730,
+        "rate": 0.30684931506849317
+      },
+      "overdue": {
+        "hits": 224,
+        "n": 730,
+        "rate": 0.30684931506849317
+      },
+      "recently_drawn_first": {
+        "hits": 245,
+        "n": 730,
+        "rate": 0.3356164383561644
+      },
+      "skip_last_7": {
+        "hits": 212,
+        "n": 730,
+        "rate": 0.29041095890410956
+      },
+      "skip_last_30": {
+        "hits": 210,
+        "n": 730,
+        "rate": 0.2876712328767123
+      },
+      "digits_hot_100": {
+        "hits": 217,
+        "n": 730,
+        "rate": 0.29726027397260274
+      },
+      "digits_hot_500": {
+        "hits": 214,
+        "n": 730,
+        "rate": 0.29315068493150687
+      },
+      "digits_cold_500": {
+        "hits": 225,
+        "n": 730,
+        "rate": 0.3082191780821918
+      }
+    },
+    "note": "best of 14 rankers on the same draws, so its back-test rate is optimistic"
   }
 }
